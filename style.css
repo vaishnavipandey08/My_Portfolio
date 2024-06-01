@@ -108,9 +108,26 @@ body {
     width: 200rem;
     color: transparent;
     -webkit-text-stroke: .7px var(--main-color);
+    background-image: linear-gradient(var(--main-color),var(--main-color));
+    background-repeat: no-repeat ;
+    -webkit-background-clip: text;
+    background-position: 0 0 ;
+    animation: homeBgText 6s linear infinite ;
+    animation-delay: 2s ;
 }
 
-.home-content {
+.home-content .text-animate h3::before {
+    content: '' ;
+    position: absolute ;
+    top: 0 ;
+    left: 0 ;
+    width: 0 ;
+    height: 100% ;
+    border-right: 2px solid var(--main-color);
+    z-index: -1 ;
+}
+
+.home-content p {
     font-size: 1.6rem;
     margin: 2rem 0 4rem;
 }
@@ -184,7 +201,7 @@ body {
     width: 470px;
     display: flex;
     justify-content: space-between;
-    padding: 20rem 9% 2rem;
+    padding: 40rem 9% 2rem;
 }
 
 .home-sci a {
@@ -631,6 +648,10 @@ span {
     .education-row {
         padding: 10rem 4% 5rem 5%; 
     }
+
+    .home-sci {
+        padding-top: 200px ;
+    }
 }
 
 @media (max-width: 991px) {
@@ -807,6 +828,7 @@ span {
         max-width: 363px;
     }
 }
+
 
 
 
