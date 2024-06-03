@@ -9,10 +9,12 @@ menuIcon.onclick = ()  => {
 }
 
 
+
 //Scroll Sections
 
 let sections = document.querySelectorAll('section');
 let navLinks = document.querySelectorAll('header nav  a');
+
 
 window.onscroll = () => {
     sections.forEach(sec => {
@@ -25,9 +27,15 @@ window.onscroll = () => {
 
             navLinks.forEach(links => {
                 links.classList.remove('active') ;
-                document.querySelector('header nav a[href *= ')
+                document.querySelector('header nav a')
             });
 
+            //active sections for animations on scroll 
+            sec.classList.add('show-animate ') ;
+        }
+
+        else {
+            sec.classList.remove('show-animate ') ;
         }
     }) 
 

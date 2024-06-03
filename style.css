@@ -48,6 +48,7 @@ body {
 }
 
 .logo {
+    position: relative ;
     font-size: 2.5rem;
     color: var(--text-color);
     font-weight: 600;
@@ -69,6 +70,7 @@ body {
 }
 
 #menu-icon {
+    position: relative ;
     font-size: 3.6rem;
     color: var(--text-color);
     cursor: pointer;
@@ -108,12 +110,6 @@ body {
     width: 200rem;
     color: transparent;
     -webkit-text-stroke: .7px var(--main-color);
-    background-image: linear-gradient(var(--main-color),var(--main-color));
-    background-repeat: no-repeat ;
-    -webkit-background-clip: text;
-    background-position: 0 0 ;
-    animation: homeBgText 6s linear infinite ;
-    animation-delay: 2s ;
 }
 
 .home-content .text-animate h3::before {
@@ -196,12 +192,13 @@ body {
 
 
 .home-sci {
-    position: absolute;
+    position: absolute ;
     bottom: 4rem;
     width: 470px;
     display: flex;
     justify-content: space-between;
     padding: 40rem 9% 2rem;
+    height: 350px ;
 }
 
 .home-sci a {
@@ -289,6 +286,7 @@ span {
     border-bottom: .2rem solid var(--second-bg-color);
     border-left: .2rem solid var(--main-color);
     border-right: .2rem solid var(--main-color);
+    animation: aboutSpinner 8s linear infinite;
 }
 
 .about-content {
@@ -638,7 +636,27 @@ span {
 
 .footer-iconTop a:hover i {
     color: var(--main-color);
-} 
+}
+
+/* ANIMATION reload and scroll */
+
+.animate {
+    position: absolute ;
+    top: 0 ;
+    right: 0 ;
+    width: 100% ;
+    height: 100% ;
+    background: yellowgreen ;
+    z-index: 98 ;
+}
+
+.logo .animate,
+.navbar .animate,
+#menu-icon .animate,
+.home.show-animate .animate {
+    animation: showRight 1s ease forwards ;
+    animation-delay: calc(.3s * var(--i));
+}
 
 @media (max-width: 1200px) {
     html {
@@ -647,10 +665,6 @@ span {
 
     .education-row {
         padding: 10rem 4% 5rem 5%; 
-    }
-
-    .home-sci {
-        padding-top: 200px ;
     }
 }
 
@@ -753,7 +767,7 @@ span {
 
     .home-sci {
         width: 360px ;
-    }
+    } 
     
     .home-sci a {
        height: 38px ;
@@ -777,9 +791,9 @@ span {
         font-size: 5.2rem ;
     }
 
-    /* .education {
+    .education {
         padding: 10rem 4% 5rem 5% ;
-    } */
+    }
 
     .contact form .input-box .input-field {
         width: 100% ;
@@ -827,7 +841,14 @@ span {
     .education-box {
         max-width: 363px;
     }
+}  
+
+@keyframes showRight {
+    100% {
+        width: 0 ;
+    }
 }
+
 
 
 
