@@ -129,6 +129,14 @@ body {
     margin: 2rem 0 4rem;
 }
 
+.home-img {
+    background-image: url(/imgs/My_image.jpg);
+    height: 500px;
+    width: 400px;
+    background-size: cover;
+    border: 2px solid var(--main-color);
+}
+
 .btn-box {
     position: relative;
     display: flex;
@@ -199,7 +207,7 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 40rem 9% 2rem;
-    height: 350px ;
+
 }
 
 .home-sci a {
@@ -239,6 +247,7 @@ body {
     width: 100%;
 }
 
+
 .about {
     display: flex;
     justify-content: center;
@@ -271,8 +280,9 @@ span {
 
 .about-img img {
     width: 90%;
+    height : 90%;
     border-radius: 50%;
-    border: .2rem solid var(--main-color);
+    border: .3rem solid var(--main-color);
 }
 
 .about-img .circle-spin {
